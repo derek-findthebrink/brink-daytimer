@@ -1,0 +1,55 @@
+{
+  "name": "brink-daytimer",
+  "version": "1.0.0",
+  "description": "day analytics to inform behaviour",
+  "main": "build/daytimer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:coffee": "coffee -wbco ./build ./dev/modules",
+    "build:sh": "echo '#!/usr/bin/env node' > build/daytimer.js && coffee -bp dev/daytimer.coffee >> build/daytimer.js",
+    "ui:css": "sass -wc dev/ui/css/index.sass:ui/css/index.css", 
+    "ui:html": "jade -wP dev/ui/index.jade -o ui/",
+    "ui:js": "coffee -wco ui/scripts dev/ui/app",
+    "ui:watch": "npm run ui:css & npm run ui:html & npm run ui:js",
+    "ui:server": "cd ui && browser-sync start --server --files '**/*.html, **/*.css, **/*.js'",
+    "watch": "watch 'npm run build:sh' dev & npm run build:coffee & npm run ui:watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/findthebrink/brink-daytimer.git"
+  },
+  "keywords": [
+    "daytimer",
+    "brink",
+    "tasks",
+    "daily",
+    "analytics",
+    "help",
+    "behaviour",
+    "influence",
+    "help",
+    "make",
+    "better",
+    "work",
+    "ADD",
+    "ADHD",
+    "assist",
+    "executive",
+    "executive",
+    "function"
+  ],
+  "author": "Derek Moore <repos@findthebrink.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/findthebrink/brink-daytimer/issues"
+  },
+  "homepage": "https://github.com/findthebrink/brink-daytimer#readme",
+  "dependencies": {
+    "async": "^1.4.2",
+    "brink-sass": "^0.2.3",
+    "commander": "^2.8.1",
+    "inquirer": "^0.10.0",
+    "moment": "^2.10.6",
+    "underscore": "^1.8.3"
+  }
+}
