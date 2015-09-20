@@ -562,6 +562,14 @@ main, nav, footer {
       display: table-cell;
       width: 16.66667%; }
 
+#questions-menu {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 0.5em; }
+  #questions-menu .icon {
+    width: 5em; }
+
 .questions-list .complete {
   background-color: rgba(95, 181, 70, 0.75); }
 .questions-list .pending {
