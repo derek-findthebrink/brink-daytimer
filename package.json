@@ -10,10 +10,10 @@
     "ui:css": "sass -wc dev/ui/css/index.sass:ui/css/index.css",
     "ui:html": "jade -wP dev/ui/index.jade -o ui/",
     "ui:react": "cjsx -wco ui/scripts/react dev/react/index.cjsx",
-    "ui:js": "watch 'browserify -t coffeeify --extension='.coffee' dev/ui/app/index.coffee > ui/scripts/bundle.js' dev/ui/app",
+    "ui:js": "watch 'browserify --debug --fast -t coffeeify --extension='.coffee' dev/ui/app/index.coffee > ui/scripts/bundle.js' dev/ui/app",
     "ui:watch": "npm run ui:css & npm run ui:html & npm run ui:react & npm run ui:js",
     "watch": "watch 'npm run build:sh' dev & npm run build:coffee & npm run ui:watch",
-    "ui:server": "cd ui && browser-sync start --server --files '**/*.html, **/*.css, **/*.js'"
+    "ui:server": "cd ui && browser-sync start --server --files '**/*.html, **/*.css, **/*.js' --reload-delay 500"
   },
   "repository": {
     "type": "git",

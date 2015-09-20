@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+  <link rel="stylesheet" href="scripts/lib/slicknav/dist/slicknav.css">
   <link rel="stylesheet" href="css/index.css">
   <title>daytimer</title>
 </head>
@@ -10,6 +11,14 @@
       <h1>daytimer</h1>
     </div>
   </header>
+  <div class="slicknav"></div>
+  <nav>
+    <ul>
+      <li><a href="#">stats</a></li>
+      <li><a href="#">questions</a></li>
+      <li><a href="#">settings</a></li>
+    </ul>
+  </nav>
   <main>
     <div id="questions">
       <ul class="questions-list">
@@ -41,6 +50,8 @@
     <div class="add-question"><img src="assets/button-add.png" class="icon icon-add"></div>
   </div>
   <footer></footer>
+  <script src="./scripts/lib/jquery/dist/jquery.min.js"></script>
+  <script src="./scripts/lib/slicknav/dist/jquery.slicknav.min.js"></script>
   <script src="./scripts/bundle.js"></script>
   <script src="./scripts/react/index.js"></script><script src="https://use.typekit.net/rsz1its.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>

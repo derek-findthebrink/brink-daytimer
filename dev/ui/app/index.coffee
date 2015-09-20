@@ -6,14 +6,14 @@ tag = "app:%s =>"
 # ---------------------------------------
 
 # window requires
-window.$ = require("jquery")
+# each jQuery and slicknav.jquery are loaded via html-initiated requests to lib folder
 window.React = require("react")
 window.ReactFireMixin = require("reactfire")
 window._ = require("underscore")
 
 # node requires
-
 base = require("./connect.coffee")
+
 
 
 # Logic
@@ -35,3 +35,12 @@ logData = (err, data)->
 	console.log(data.val())
 
 # _.each(arr, b.addQuestion, b)
+
+
+# slicknav
+$("nav").slicknav({
+	init: ->
+		$("nav").hide()
+	prependTo: $(".slicknav")
+	label: ""
+	})

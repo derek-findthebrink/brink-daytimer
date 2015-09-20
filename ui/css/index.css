@@ -491,12 +491,9 @@ form {
   form .form-field {
     display: block; }
 
-ul {
-  list-style-type: none; }
-
-html {
-  background-image: url("/assets/a-nice-green-mapple-leaf.jpg");
-  background-size: cover; }
+main, nav, footer {
+  margin-top: 1em;
+  margin-bottom: 1em; }
 
 header {
   max-width: 100%;
@@ -526,10 +523,6 @@ header {
     header .title h1 {
       font-weight: 200;
       font-size: 250%; }
-
-main, nav, footer {
-  margin-top: 1em;
-  margin-bottom: 1em; }
 
 #questions {
   max-width: 100%;
@@ -573,6 +566,19 @@ main, nav, footer {
   #questions-menu .icon {
     width: 5em; }
 
+.icon-details {
+  width: 3em; }
+
+.icon-toggle {
+  width: 4em; }
+
+ul {
+  list-style-type: none; }
+
+html {
+  background-image: url("/assets/a-nice-green-mapple-leaf.jpg");
+  background-size: cover; }
+
 .questions-list .complete {
   background-color: rgba(95, 181, 70, 0.75); }
 .questions-list .pending {
@@ -580,10 +586,19 @@ main, nav, footer {
 .questions-list .incomplete {
   background-color: rgba(228, 30, 55, 0.75); }
 
-.icon-details {
-  width: 3em; }
+.slicknav_btn {
+  background-color: #094DA2;
+  border: 2px solid #052751; }
 
-.icon-toggle {
-  width: 4em; }
+.slicknav_menu {
+  margin-top: -2.7em;
+  padding: 0;
+  background: none; }
+  .slicknav_menu .slicknav_nav {
+    text-align: center;
+    font-size: 110%;
+    background-color: rgba(9, 77, 162, 0.88); }
+    .slicknav_menu .slicknav_nav a:hover {
+      background-color: rgba(147, 177, 214, 0.4); }
 
 /*# sourceMappingURL=index.css.map */

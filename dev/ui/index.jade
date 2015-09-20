@@ -1,5 +1,6 @@
 doctype html
 head
+	link(rel="stylesheet" href="scripts/lib/slicknav/dist/slicknav.css")
 	link(rel="stylesheet" href="css/index.css")
 	title daytimer
 body
@@ -8,6 +9,16 @@ body
 			img(src="assets/brink-logo-small.svg")
 		.title
 			h1 daytimer
+	.slicknav
+	nav
+		ul
+			li
+				a(href="#") stats
+			li
+				a(href="#") questions
+			li
+				a(href="#") settings
+
 	main
 		div#questions
 			ul.questions-list
@@ -37,6 +48,8 @@ body
 		div.add-question
 			img.icon.icon-add(src="assets/button-add.png")
 	footer
+	script(src="./scripts/lib/jquery/dist/jquery.min.js")
+	script(src="./scripts/lib/slicknav/dist/jquery.slicknav.min.js")
 	script(src="./scripts/bundle.js")
 	script(src="./scripts/react/index.js")
 	//- typekit

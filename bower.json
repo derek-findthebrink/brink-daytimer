@@ -1,0 +1,19 @@
+{
+  "name": "brink-today",
+  "version": "1.0.0",
+  "homepage": "https://github.com/findthebrink/brink-daytimer",
+  "authors": [
+    "Derek <repos@findthebrink.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "slicknav": "~1.0.4"
+  }
+}

@@ -15,7 +15,7 @@ QuestionItems = React.createClass({
 			# console.log(tag, "createItem:question", question)
 			# console.log(tag, "createItem:index", index)
 			
-			# set correct li class
+			# set correct li classes
 			if question.complete
 				qClass = "complete"
 				qCaret = "assets/caret-complete.png"
@@ -28,8 +28,6 @@ QuestionItems = React.createClass({
 				qClass = "incomplete"
 				qCaret = "assets/caret-incomplete.png"
 				qToggle = "assets/button-incomplete.png"
-
-			# 
 
 			<li className={  qClass  } key={  index  } >
 				<div className="todayItem-details">
