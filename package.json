@@ -9,7 +9,7 @@
     "build:sh": "echo '#!/usr/bin/env node' > build/daytimer.js && coffee -bp dev/daytimer.coffee >> build/daytimer.js",
     "ui:css": "sass -wc dev/ui/css/index.sass:ui/css/index.css",
     "ui:html": "jade -wP dev/ui/index.jade -o ui/",
-    "ui:js": "watch 'browserify -t coffeeify dev/ui/app/index.coffee > ui/scripts/bundle.js' dev/ui/app",
+    "ui:js": "watch 'browserify -t coffeeify --extension='.coffee' dev/ui/app/index.coffee > ui/scripts/bundle.js' dev/ui/app",
     "ui:watch": "npm run ui:css & npm run ui:html & npm run ui:js",
     "ui:server": "cd ui && browser-sync start --server --files '**/*.html, **/*.css, **/*.js'",
     "watch": "watch 'npm run build:sh' dev & npm run build:coffee & npm run ui:watch"

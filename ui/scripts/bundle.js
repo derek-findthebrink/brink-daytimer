@@ -37,7 +37,7 @@ exports = module.exports = base;
 
 
 },{"firebase":3}],2:[function(require,module,exports){
-var _, arr, b, base, createQuestion, logData, one, tag, three, two;
+var _, b, base, createQuestion, logData, tag;
 
 tag = "app:%s =>";
 
@@ -58,14 +58,6 @@ createQuestion = function(name, question, complete) {
   };
   return x;
 };
-
-one = createQuestion("Tucker", "did you walk him?", false);
-
-two = createQuestion("Tucker", "did you feed him brekkers?", false);
-
-three = createQuestion("Tucker", "did you feed him dinner?", false);
-
-arr = [one, two, three];
 
 b = new base("derek");
 

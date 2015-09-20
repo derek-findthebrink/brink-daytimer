@@ -66,6 +66,12 @@ React.render(
 	$("#today")[0]
 	)
 
+
+
+
+# Clock thing in the footer
+# ------------------------------------------------------------------------------
+
 SetIntervalMixin = {
 	componentWillMount: ->
 		this.intervals = []

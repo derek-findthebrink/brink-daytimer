@@ -26,12 +26,6 @@ createQuestion = (name, question, complete)->
 	}
 	return x
 
-one = createQuestion("Tucker", "did you walk him?", false)
-two = createQuestion("Tucker", "did you feed him brekkers?", false)
-three = createQuestion("Tucker", "did you feed him dinner?", false)
-
-arr = [one, two, three]
-
 b = new base("derek")
 
 logData = (err, data)->
