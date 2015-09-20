@@ -7,9 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:coffee": "coffee -wbco ./build ./dev/modules",
     "build:sh": "echo '#!/usr/bin/env node' > build/daytimer.js && coffee -bp dev/daytimer.coffee >> build/daytimer.js",
-    "ui:css": "sass -wc dev/ui/css/index.sass:ui/css/index.css", 
+    "ui:css": "sass -wc dev/ui/css/index.sass:ui/css/index.css",
     "ui:html": "jade -wP dev/ui/index.jade -o ui/",
-    "ui:js": "coffee -wco ui/scripts dev/ui/app",
+    "ui:js": "watch 'browserify -t coffeeify dev/ui/app/index.coffee > ui/scripts/bundle.js' dev/ui/app",
     "ui:watch": "npm run ui:css & npm run ui:html & npm run ui:js",
     "ui:server": "cd ui && browser-sync start --server --files '**/*.html, **/*.css, **/*.js'",
     "watch": "watch 'npm run build:sh' dev & npm run build:coffee & npm run ui:watch"
@@ -47,9 +47,12 @@
   "dependencies": {
     "async": "^1.4.2",
     "brink-sass": "^0.2.3",
+    "coffeeify": "^1.1.0",
     "commander": "^2.8.1",
     "inquirer": "^0.10.0",
+    "jquery": "^2.1.4",
     "moment": "^2.10.6",
+    "react": "^0.13.3",
     "underscore": "^1.8.3"
   }
 }
