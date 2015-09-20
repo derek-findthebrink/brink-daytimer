@@ -3,39 +3,64 @@ ul
 
 // backgrounds
 html
-	background-image: url("//c1.staticflickr.com/1/579/21325504549_8b41625664_c.jpg")
+	background-image: url("/assets/a-nice-green-mapple-leaf.jpg")
 	background-size: cover
 
-header, main, nav, footer
-	background-color: rgba(mix(green, white), 0.5)
+header
+	@include outer-container(100%)
+	@include row(table)
 	color: white
+	background-color: $header-bcg
+	div
+		vertical-align: middle
+	.logo
+		@include span-columns(1 of 4)
+		img 
+			display: block
+			height: 100%
+			margin: 0 auto
+	.title
+		@include span-columns(3 of 4)
+		@include reset-display()
+		h1
+			font-weight: 200
 
 main, nav, footer
 	margin-top: 1em
 	margin-bottom: 1em
-	padding: 0.5em
 
-h2
-	border-bottom: 1px solid rgba(black, 0.3)
-
-header
-	h1 
-		font-weight: 200
-
-.todayContainer
+#questions
 	@include outer-container(100%)
 	li 
 		@include row(table)
 		text-align: center
-		& > div.todayItem-name
+		padding: 0.5em
+		img 
+			display: block
+		div
+			vertical-align: middle
+		& > div.todayItem-details
 			@include span-columns(1 of 6)
-			border-right: 1px solid rgba(black, 0.5)
 		& > div.todayItem-question
 			@include span-columns(4 of 6)
-		& > div.todayItem-status
-			@include span-columns(2 of 6)
+			p 
+				font-size: 1.5em
+				color: white
+				font-family: "ff-enzo-web"
+		& > div.todayItem-menu
+			@include span-columns(1 of 6)
+			@include reset-display()
 
+.questions-list
+	.complete
+		background-color: $item-complete-bcg
+	.pending
+		background-color: $item-pending-bcg
+	.incomplete
+		background-color: $item-incomplete-bcg
 
-.todayItem
-	&:hover
-		background-color: rgba(white, 0.2)
+.icon-details
+	width: 3em
+
+.icon-toggle
+	width: 4em

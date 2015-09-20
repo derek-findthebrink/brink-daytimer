@@ -4,16 +4,37 @@ head
 	title daytimer
 body
 	header
-		h1 daytimer
+		.logo
+			img(src="assets/brink-logo-small.svg")
+		.title
+			h1 daytimer
 	main
-		h2 today
-		div#today
-		//- ul.today
-		//- 	li
-		//- 		h3 tucker
-		//- 		p did you walk him?
-		//- 		button yes
-		//- 		button no
+		div#questions
+			ul.questions-list
+				li.complete
+					.todayItem-details
+						img.icon-details(src="assets/caret-complete.png")
+					.todayItem-question
+						p walk tucker
+					.todayItem-menu
+						img.icon-toggle(src="assets/button-complete.png")
+				li.incomplete
+					.todayItem-details
+						img.icon-details(src="assets/caret-incomplete.png")
+					.todayItem-question
+						p walk tucker
+					.todayItem-menu
+						img.icon-toggle(src="assets/button-incomplete.png")
+				li.pending
+					.todayItem-details
+						img.icon-details(src="assets/caret-pending.png")
+					.todayItem-question
+						p walk tucker
+					.todayItem-menu
+						img.icon-toggle(src="assets/button-pending.png")
+
+		div.menu
+			div.add-question
 	footer
 	script(src="./scripts/bundle.js")
 	script(src="./scripts/react/test.js")

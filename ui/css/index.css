@@ -495,49 +495,84 @@ ul {
   list-style-type: none; }
 
 html {
-  background-image: url("//c1.staticflickr.com/1/579/21325504549_8b41625664_c.jpg");
+  background-image: url("/assets/a-nice-green-mapple-leaf.jpg");
   background-size: cover; }
 
-header, main, nav, footer {
-  background-color: rgba(128, 192, 128, 0.5);
-  color: white; }
-
-main, nav, footer {
-  margin-top: 1em;
-  margin-bottom: 1em;
-  padding: 0.5em; }
-
-h2 {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3); }
-
-header h1 {
-  font-weight: 200; }
-
-.todayContainer {
+header {
   max-width: 100%;
   margin-left: auto;
-  margin-right: auto; }
-  .todayContainer::after {
+  margin-right: auto;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  color: white;
+  background-color: rgba(9, 77, 162, 0.88); }
+  header::after {
     clear: both;
     content: "";
     display: table; }
-  .todayContainer li {
+  header div {
+    vertical-align: middle; }
+  header .logo {
+    display: table-cell;
+    width: 25%; }
+    header .logo img {
+      display: block;
+      height: 100%;
+      margin: 0 auto; }
+  header .title {
+    display: table-cell;
+    width: 75%; }
+    header .title h1 {
+      font-weight: 200; }
+
+main, nav, footer {
+  margin-top: 1em;
+  margin-bottom: 1em; }
+
+#questions {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto; }
+  #questions::after {
+    clear: both;
+    content: "";
+    display: table; }
+  #questions li {
     display: table;
     width: 100%;
     table-layout: fixed;
-    text-align: center; }
-    .todayContainer li > div.todayItem-name {
+    text-align: center;
+    padding: 0.5em; }
+    #questions li img {
+      display: block; }
+    #questions li div {
+      vertical-align: middle; }
+    #questions li > div.todayItem-details {
       display: table-cell;
-      width: 16.66667%;
-      border-right: 1px solid rgba(0, 0, 0, 0.5); }
-    .todayContainer li > div.todayItem-question {
+      width: 16.66667%; }
+    #questions li > div.todayItem-question {
       display: table-cell;
       width: 66.66667%; }
-    .todayContainer li > div.todayItem-status {
+      #questions li > div.todayItem-question p {
+        font-size: 1.5em;
+        color: white;
+        font-family: "ff-enzo-web"; }
+    #questions li > div.todayItem-menu {
       display: table-cell;
-      width: 33.33333%; }
+      width: 16.66667%; }
 
-.todayItem:hover {
-  background-color: rgba(255, 255, 255, 0.2); }
+.questions-list .complete {
+  background-color: rgba(95, 181, 70, 0.75); }
+.questions-list .pending {
+  background-color: rgba(255, 221, 0, 0.75); }
+.questions-list .incomplete {
+  background-color: rgba(228, 30, 55, 0.75); }
+
+.icon-details {
+  width: 3em; }
+
+.icon-toggle {
+  width: 4em; }
 
 /*# sourceMappingURL=index.css.map */

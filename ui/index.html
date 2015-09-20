@@ -5,11 +5,40 @@
 </head>
 <body>
   <header>
-    <h1>daytimer</h1>
+    <div class="logo"><img src="assets/brink-logo-small.svg"></div>
+    <div class="title">
+      <h1>daytimer</h1>
+    </div>
   </header>
   <main>
-    <h2>today</h2>
-    <div id="today"></div>
+    <div id="questions">
+      <ul class="questions-list">
+        <li class="complete">
+          <div class="todayItem-details"><img src="assets/caret-complete.png" class="icon-details"></div>
+          <div class="todayItem-question">
+            <p>walk tucker</p>
+          </div>
+          <div class="todayItem-menu"><img src="assets/button-complete.png" class="icon-toggle"></div>
+        </li>
+        <li class="incomplete">
+          <div class="todayItem-details"><img src="assets/caret-incomplete.png" class="icon-details"></div>
+          <div class="todayItem-question">
+            <p>walk tucker</p>
+          </div>
+          <div class="todayItem-menu"><img src="assets/button-incomplete.png" class="icon-toggle"></div>
+        </li>
+        <li class="pending">
+          <div class="todayItem-details"><img src="assets/caret-pending.png" class="icon-details"></div>
+          <div class="todayItem-question">
+            <p>walk tucker</p>
+          </div>
+          <div class="todayItem-menu"><img src="assets/button-pending.png" class="icon-toggle"></div>
+        </li>
+      </ul>
+    </div>
+    <div class="menu">
+      <div class="add-question"></div>
+    </div>
   </main>
   <footer></footer>
   <script src="./scripts/bundle.js"></script>

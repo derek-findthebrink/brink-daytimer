@@ -10,5 +10,11 @@ images = [
 		"filename": "a-nice-green-mapple-leaf.jpg",
 		"src": "http://www.wallpapersfolder.com/user-content/uploads/wall/o/2013/07/a-nice-green-mapple-leaf.jpg",
 		"dateAccessed": "2015-09-20"
+	},
+	{
+		"title": "brink logo",
+		"filename": "brink-logo-small.svg",
+		"src": "&copy; 2015 Brink Technology Co. All Rights Reserved.",
+		"dateAccessed" : "2015-09-20"
 	}
 ]
