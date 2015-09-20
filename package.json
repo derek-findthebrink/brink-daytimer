@@ -9,10 +9,11 @@
     "build:sh": "echo '#!/usr/bin/env node' > build/daytimer.js && coffee -bp dev/daytimer.coffee >> build/daytimer.js",
     "ui:css": "sass -wc dev/ui/css/index.sass:ui/css/index.css",
     "ui:html": "jade -wP dev/ui/index.jade -o ui/",
+    "ui:react": "cjsx -wco ui/scripts/react dev/react/index.cjsx",
     "ui:js": "watch 'browserify -t coffeeify --extension='.coffee' dev/ui/app/index.coffee > ui/scripts/bundle.js' dev/ui/app",
-    "ui:watch": "npm run ui:css & npm run ui:html & npm run ui:js",
-    "ui:server": "cd ui && browser-sync start --server --files '**/*.html, **/*.css, **/*.js'",
-    "watch": "watch 'npm run build:sh' dev & npm run build:coffee & npm run ui:watch"
+    "ui:watch": "npm run ui:css & npm run ui:html & npm run ui:react & npm run ui:js",
+    "watch": "watch 'npm run build:sh' dev & npm run build:coffee & npm run ui:watch",
+    "ui:server": "cd ui && browser-sync start --server --files '**/*.html, **/*.css, **/*.js'"
   },
   "repository": {
     "type": "git",
@@ -54,6 +55,7 @@
     "jquery": "^2.1.4",
     "moment": "^2.10.6",
     "react": "^0.13.3",
+    "reactfire": "^0.5.0",
     "underscore": "^1.8.3"
   }
 }

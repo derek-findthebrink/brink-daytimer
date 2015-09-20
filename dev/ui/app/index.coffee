@@ -8,9 +8,10 @@ tag = "app:%s =>"
 # window requires
 window.$ = require("jquery")
 window.React = require("react")
+window.ReactFireMixin = require("reactfire")
+window._ = require("underscore")
 
 # node requires
-_ = require("underscore")
 
 base = require("./connect.coffee")
 
@@ -26,12 +27,11 @@ createQuestion = (name, question, complete)->
 	}
 	return x
 
-b = new base("derek")
+window.b = new base("derek")
 
 logData = (err, data)->
 	if err
 		throw err
 	console.log(data.val())
 
-b.readQuestions(logData)
 # _.each(arr, b.addQuestion, b)

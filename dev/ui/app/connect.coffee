@@ -16,7 +16,7 @@ base = (user)->
 
 	this.getQuestionsBase = ->
 		base = new firebase(this.questionsBase)
-		console.log(tag, "questionsbase", this.questionsBase)
+		# console.log(tag, "questionsbase", this.questionsBase)
 		return base
 
 	this.addQuestion = (data, cb)->

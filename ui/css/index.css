@@ -524,7 +524,8 @@ header {
     display: table-cell;
     width: 75%; }
     header .title h1 {
-      font-weight: 200; }
+      font-weight: 200;
+      font-size: 250%; }
 
 main, nav, footer {
   margin-top: 1em;
@@ -561,6 +562,8 @@ main, nav, footer {
     #questions li > div.todayItem-menu {
       display: table-cell;
       width: 16.66667%; }
+      #questions li > div.todayItem-menu img {
+        margin: 0 auto; }
 
 #questions-menu {
   position: fixed;
