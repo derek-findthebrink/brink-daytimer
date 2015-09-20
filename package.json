@@ -49,6 +49,7 @@
     "brink-sass": "^0.2.3",
     "coffeeify": "^1.1.0",
     "commander": "^2.8.1",
+    "firebase": "^2.2.9",
     "inquirer": "^0.10.0",
     "jquery": "^2.1.4",
     "moment": "^2.10.6",
