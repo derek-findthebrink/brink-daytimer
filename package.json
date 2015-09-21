@@ -10,7 +10,7 @@
     "ui:css": "sass -wc dev/ui/css/index.sass:ui/css/index.css",
     "ui:html": "jade -wP dev/ui/index.jade -o ui/",
     "ui:react": "cjsx -wco ui/scripts/react dev/react/index.cjsx",
-    "ui:js": "watch 'browserify --debug --fast -t coffeeify --extension='.coffee' dev/ui/app/index.coffee > ui/scripts/bundle.js' dev/ui/app",
+    "ui:js": "watchify --debug -v --fast -t coffee-reactify --extension='.coffee' --extension='.cjsx' dev/ui/app/index.coffee -o ui/scripts/bundle.js",
     "ui:watch": "npm run ui:css & npm run ui:html & npm run ui:react & npm run ui:js",
     "watch": "watch 'npm run build:sh' dev & npm run build:coffee & npm run ui:watch",
     "ui:server": "cd ui && browser-sync start --server --files '**/*.html, **/*.css, **/*.js' --reload-delay 500"
@@ -47,6 +47,7 @@
   "homepage": "https://github.com/findthebrink/brink-daytimer#readme",
   "dependencies": {
     "async": "^1.4.2",
+    "backbone": "^1.2.3",
     "brink-sass": "^0.2.3",
     "coffeeify": "^1.1.0",
     "commander": "^2.8.1",
@@ -55,7 +56,11 @@
     "jquery": "^2.1.4",
     "moment": "^2.10.6",
     "react": "^0.13.3",
+    "react-router": "^0.13.3",
     "reactfire": "^0.5.0",
     "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "coffee-reactify": "^4.0.0"
   }
 }

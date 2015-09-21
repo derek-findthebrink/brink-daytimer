@@ -13,6 +13,7 @@ base = (user)->
 	this.url = "https://brink-today.firebaseio.com"
 	this.user = this.url + "/users/" + user
 	this.questionsBase = this.user + "/questions"
+	this.daytimerBase = this.user + "/daytimers"
 
 	this.getQuestionsBase = ->
 		base = new firebase(this.questionsBase)
@@ -23,14 +24,9 @@ base = (user)->
 		this.getQuestionsBase().push(data)
 		cb(null)
 
-	this.readQuestions = (cb)->
-		returnValue = (snap)->
-			console.log(tag, "readQuestions:returnValue", snap)
-			return cb(null, snap)
-		returnFail = (err)->
-			console.log(tag, "readQuestions:returnFail", "return failed!")
-			cb(err)
-		this.getQuestionsBase().once("value", returnValue, returnFail)
+	this.getDaytimerBase = ->
+		base = new firebase(this.daytimerBase)
+		return base
 
 	return this
 
