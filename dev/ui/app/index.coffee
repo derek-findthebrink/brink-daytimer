@@ -22,7 +22,7 @@ window.b = new base("derek")
 collections = require("./collections/index")
 
 # router
-router = require("react-router")
+router = require("../../react/router")
 
 # ui
 ui = require("./ui")
@@ -46,5 +46,6 @@ app.c.daytimers = new app.C.collections.daytimers()
 
 
 # ui
+# views.nav.render()
 ui.slicknav()
 views.questions.render()
