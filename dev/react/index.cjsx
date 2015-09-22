@@ -5,14 +5,13 @@ tag = "react/index:%s =>"
 # Requires
 # ---------------------------------------
 questions = require "./questions"
-nav = require "./nav"
 
 # Logic
 # ---------------------------------------
 
 index = {
 	questions: questions
-	nav: nav
+	# nav: nav
 }
 
 module.exports = exports = index

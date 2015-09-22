@@ -20,9 +20,7 @@ window.b = new base("derek")
 
 # backbone
 collections = require("./collections/index")
-
-# router
-router = require("../../react/router")
+router = require("./router/main")
 
 # ui
 ui = require("./ui")
@@ -38,14 +36,19 @@ app.C = {}
 app.C.collections = {}
 app.C.collections.questions = collections.questions
 app.C.collections.daytimers = collections.daytimers
+app.C.routers = {}
+app.C.routers.main = router
 app.c = {}
-app.v = {}
-app.r = {}
 app.c.questions = new app.C.collections.questions()
 app.c.daytimers = new app.C.collections.daytimers()
+app.v = {}
+app.v.questions = views.questions
+app.r = {}
+
+# app.start = router.render
 
 
 # ui
-# views.nav.render()
 ui.slicknav()
-views.questions.render()
+# app.start()
+app.r.main = new app.C.routers.main()

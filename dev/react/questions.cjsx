@@ -68,5 +68,6 @@ renderQuestions = ->
 
 
 exports = module.exports = {
+	class: QuestionsList
 	render: renderQuestions
 }
