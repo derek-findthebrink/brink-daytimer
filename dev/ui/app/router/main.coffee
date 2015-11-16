@@ -7,13 +7,17 @@ tag = "router/main:%s =>"
 $ = window.$
 _ = window._
 Backbone = window.Backbone
+React = require("react")
 
 # Logic
 # ---------------------------------------
 
 main = Backbone.Router.extend({
 	routes:
-		"questions": "pageQuestions"
+		"trackers": "pageTrackers"
+		"dashboard": "pageDashboard"
+		"stats": "pageStats"
+		"settings": "pageSettings"
 	initialize: ->
 		# console.log(tag, "Router", "init!")
 		this.app = window.App
@@ -21,6 +25,7 @@ main = Backbone.Router.extend({
 			Backbone.history.start({
 				pushState: true
 				})
+		this.navigate("dashboard", {trigger: true})
 		this.bindAnchors()
 		return this
 	bindAnchors: ->
@@ -33,10 +38,16 @@ main = Backbone.Router.extend({
 			# console.log(tag, "anchor:click", target)
 			this.navigate(target, {trigger: true})
 			)
-	pageQuestions: ->
+	pageTrackers: ->
 		# alert("questions route init")
 		# console.log(this.app)
-		this.app.v.questions.render()
+		this.app.v.trackers.render()
+	pageDashboard: ->
+		this.app.v.dashboard.render()
+	pageStats: ->
+		this.app.v.stats.render()
+	pageSettings: ->
+		this.app.v.settings.render()
 	})
 
 

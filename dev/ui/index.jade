@@ -5,17 +5,20 @@ head
 	title daytimer
 body
 	header
-		.logo
-			img(src="assets/brink-logo-small.svg")
-		.title
-			h1 daytimer
+		a(href="/")
+			.logo
+				img(src="assets/brink-logo-small.svg")
+			.title
+				h1 daytimer
 	.slicknav
 	nav
 		ul
+			li 
+				a(href="/dashboard") dashboard
 			li
 				a(href="/stats") stats
 			li
-				a(href="/questions") questions
+				a(href="/trackers") trackers
 			li
 				a(href="/settings") settings
 

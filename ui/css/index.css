@@ -524,38 +524,38 @@ header {
       font-weight: 200;
       font-size: 250%; }
 
-#questions {
+#questions, #trackers {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto; }
-  #questions::after {
+  #questions::after, #trackers::after {
     clear: both;
     content: "";
     display: table; }
-  #questions li {
+  #questions li, #trackers li {
     display: table;
     width: 100%;
     table-layout: fixed;
     text-align: center;
     padding: 0.5em; }
-    #questions li img {
+    #questions li img, #trackers li img {
       display: block; }
-    #questions li div {
+    #questions li div, #trackers li div {
       vertical-align: middle; }
-    #questions li > div.todayItem-details {
+    #questions li > div.todayItem-details, #trackers li > div.todayItem-details {
       display: table-cell;
       width: 16.66667%; }
-    #questions li > div.todayItem-question {
+    #questions li > div.todayItem-question, #trackers li > div.todayItem-question {
       display: table-cell;
       width: 66.66667%; }
-      #questions li > div.todayItem-question p {
+      #questions li > div.todayItem-question p, #trackers li > div.todayItem-question p {
         font-size: 1.5em;
         color: white;
         font-family: "ff-enzo-web"; }
-    #questions li > div.todayItem-menu {
+    #questions li > div.todayItem-menu, #trackers li > div.todayItem-menu {
       display: table-cell;
       width: 16.66667%; }
-      #questions li > div.todayItem-menu img {
+      #questions li > div.todayItem-menu img, #trackers li > div.todayItem-menu img {
         margin: 0 auto; }
 
 #questions-menu {

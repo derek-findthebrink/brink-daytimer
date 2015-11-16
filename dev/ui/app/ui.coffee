@@ -15,6 +15,7 @@ slicknav = ->
 			$("nav").hide()
 		prependTo: $(".slicknav")
 		label: ""
+		closeOnClick: true
 		})
 
 # console.log(tag, "init", "ui init!")

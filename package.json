@@ -13,7 +13,8 @@
     "ui:js": "watchify --debug -v --fast -t coffee-reactify --extension='.coffee' --extension='.cjsx' dev/ui/app/index.coffee -o ui/scripts/bundle.js",
     "ui:watch": "npm run ui:css & npm run ui:html & npm run ui:react & npm run ui:js",
     "watch": "watch 'npm run build:sh' dev & npm run build:coffee & npm run ui:watch",
-    "ui:server": "cd ui && browser-sync start --server --files '**/*.html, **/*.css, **/*.js' --reload-delay 500"
+    "server": "nodemon ./server.js",
+    "ui:server": "cd ui && browser-sync start --proxy localhost:2000 --files '**/*.html, **/*.css, **/*.js' --reload-delay 500"
   },
   "repository": {
     "type": "git",
@@ -51,6 +52,7 @@
     "brink-sass": "^0.2.3",
     "coffeeify": "^1.1.0",
     "commander": "^2.8.1",
+    "express": "^4.13.3",
     "firebase": "^2.2.9",
     "inquirer": "^0.10.0",
     "jquery": "^2.1.4",

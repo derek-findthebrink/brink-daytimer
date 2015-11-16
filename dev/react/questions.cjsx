@@ -21,7 +21,7 @@ QuestionItems = React.createClass({
 			# console.log(tag, "createItem:index", index)
 			
 			# set correct li classes
-			if question.complete
+			if question.complete == true
 				qClass = "complete"
 				qCaret = "assets/caret-complete.png"
 				qToggle = "assets/button-complete.png"
@@ -56,7 +56,7 @@ QuestionsList = React.createClass({
 		</div>
 	# firebase connection pulled from window.b (base) object
 	componentWillMount: ->
-		ref = b.getQuestionsBase()
+		ref = b.getDaytimerBase()
 		this.bindAsArray(ref, "questions")
 	})
 

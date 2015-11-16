@@ -42,7 +42,10 @@ app.c = {}
 app.c.questions = new app.C.collections.questions()
 app.c.daytimers = new app.C.collections.daytimers()
 app.v = {}
-app.v.questions = views.questions
+app.v.dashboard = views.dashboard
+app.v.trackers = views.trackers
+app.v.stats = views.stats
+app.v.settings = views.settings
 app.r = {}
 
 # app.start = router.render

@@ -22,7 +22,7 @@ base = window.b
 modelQuestion = Backbone.Model.extend({
 	defaults: 
 		type: "boolean"
-		name: false
+		category: "uncategorized"
 		question: false
 		frequency: 1
 		min: 0
