@@ -1,2 +1,9 @@
 node_modules
 .sass-cache
+ui/scripts/backbone
+ui/scripts/moment
+ui/scripts/jquery-ui
+ui/scripts/backbone
+ui/scripts/slicknav
+ui/scripts/underscore
+ui/scripts/react

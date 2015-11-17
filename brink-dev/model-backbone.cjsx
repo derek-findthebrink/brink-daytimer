@@ -17,7 +17,7 @@ m.make = (modelSet)->
 		defaults[el.name] = el.default
 		)
 	x = _.omit(defaults, "submit")
-	console.log(tag, "defaults", x)
+	# console.log(tag, "defaults", x)
 	return x
 
 exports = module.exports = m 

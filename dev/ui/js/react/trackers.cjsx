@@ -51,15 +51,10 @@ TrackerItem = React.createClass({
 	render: ->
 		tracker = this.props.tracker
 		<li>
-			<div className="todayItem-details">
-				<img src="/assets/caret-complete.png" />
-			</div>
-			<div className="todayItem-question">
-				<h2>{tracker.question}</h2>
-			</div>
-			<div className="todayItem-menu">
-				<img src="/assets/button-complete.png" />
-			</div>
+			<p>{tracker.category}</p>
+			<h2>{tracker.question}</h2>
+			<p>{tracker.frequency} / day</p>
+			<p>{moment(tracker.dateLastAnswered).format("YYYY-MM-DD")}</p>
 		</li>
 	})
 
@@ -69,6 +64,7 @@ TrackerAdd = React.createClass({
 		$this.accordion({
 			collapsible: true
 			heightStyle: "content"
+			active: false
 			})
 		$this.find("input[type='submit']").click((e)=>
 			form = $this.find("form")

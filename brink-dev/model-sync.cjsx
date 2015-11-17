@@ -24,7 +24,7 @@ m.get = (modelName)->
 m.ReactFieldBuilder = reactForm.fieldBuilder
 
 # backbone
-m.makeBackbone = (name)->
+m.makeBackboneDefaults = (name)->
 	c = m.get(name)
 	modelBackbone.make(c)
 

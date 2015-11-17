@@ -9,9 +9,9 @@ brinkFormGen = require("../../../../brink-dev/model-sync.cjsx")
 # Logic
 # ---------------------------------------
 
-console.log(tag, "bfg", brinkFormGen)
+# console.log(tag, "bfg", brinkFormGen)
+# brinkFormGen.makeBackbone("daytimers")
 
-brinkFormGen.makeBackbone("daytimers")
 
 # Questions
 # ------------------------------------------------------------
@@ -22,16 +22,7 @@ brinkFormGen.makeBackbone("daytimers")
 
 modelQuestion = Backbone.Model.extend({
 	idAttribute: "_id"
-	defaults: 
-		type: "boolean"
-		category: "uncategorized"
-		question: ""
-		frequency: 1
-		min: 0
-		timeRange: false
-		goal: 0
-		dateLastAnswered: new Date()
-		refs: []
+	defaults: brinkFormGen.makeBackboneDefaults("trackers")
 	})
 
 
@@ -62,12 +53,7 @@ trackers = Backbone.Collection.extend({
 
 modelDaytimer = Backbone.Model.extend({
 	idAttribute: "_id"
-	defaults: 
-		questionRef: false
-		date: new Date()
-		complete: false
-		start: false
-		end: false
+	defaults: brinkFormGen.makeBackboneDefaults("daytimers")
 	})
 
 # Backbone/Firebase Collection

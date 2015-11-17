@@ -12,6 +12,9 @@ tag = "router/main:%s =>"
 main = Backbone.Router.extend({
 	routes:
 		"trackers": 	"trackers"
+		"dashboard": 	"dashboard"
+		"stats": 		"stats"
+		"settings": 	"settings"
 	initialize: ->
 		# console.log(tag, "Router", "init!")
 		if !Backbone.History.started
@@ -35,7 +38,25 @@ main = Backbone.Router.extend({
 			<app.v.Trackers.Main />
 			$(".content")[0]
 			)
-	})
+	dashboard: ->
+		console.log(tag,"dashboard", "init")
+		React.render(
+			<app.v.Dashboard.Main />
+			$(".content")[0]
+			)
+	stats: ->
+		console.log(tag, "stats", "init")
+		React.render(
+			<app.v.Stats.Main />
+			$(".content")[0]
+			)
+	settings: ->
+		console.log(tag, "settings", "init")
+		React.render(
+			<app.v.Settings.Main />
+			$(".content")[0]
+			)
+	})	
 
 
 exports = module.exports = main
