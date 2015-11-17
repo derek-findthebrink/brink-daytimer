@@ -1,0 +1,63 @@
+main, nav, footer
+	margin-top: 1em
+	margin-bottom: 1em
+
+
+header
+	@include outer-container(100%)
+	@include row(table)
+	color: white
+	background-color: $header-bcg
+	div
+		vertical-align: middle
+	.logo
+		@include span-columns(1 of 4)
+		img 
+			display: block
+			height: 100%
+			margin: 0 auto
+	.title
+		@include span-columns(3 of 4)
+		@include reset-display()
+		h1
+			font-weight: 200
+			font-size: 250%
+
+
+#questions, #trackers
+	@include outer-container(100%)
+	li 
+		@include row(table)
+		text-align: center
+		padding: 0.5em
+		img 
+			display: block
+		div
+			vertical-align: middle
+		& > div.todayItem-details
+			@include span-columns(1 of 6)
+		& > div.todayItem-question
+			@include span-columns(4 of 6)
+			p 
+				font-size: 1.5em
+				color: white
+				font-family: "ff-enzo-web"
+		& > div.todayItem-menu
+			@include span-columns(1 of 6)
+			@include reset-display()
+			img
+				margin: 0 auto
+
+#questions-menu
+	position: fixed 
+	bottom: 0
+	right: 0
+	padding: 0.5em
+	.icon 
+		width: 5em
+
+.icon-details
+	width: 3em
+
+.icon-toggle
+	width: 4em

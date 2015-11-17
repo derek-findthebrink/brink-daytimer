@@ -5,16 +5,12 @@
   "main": "build/daytimer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:coffee": "coffee -wbco ./build ./dev/modules",
-    "build:sh": "echo '#!/usr/bin/env node' > build/daytimer.js && coffee -bp dev/daytimer.coffee >> build/daytimer.js",
-    "ui:css": "sass -wc dev/ui/css/index.sass:ui/css/index.css",
-    "ui:html": "jade -wP dev/ui/index.jade -o ui/",
-    "ui:react": "cjsx -wco ui/scripts/react dev/react/index.cjsx",
-    "ui:js": "watchify --debug -v --fast -t coffee-reactify --extension='.coffee' --extension='.cjsx' dev/ui/app/index.coffee -o ui/scripts/bundle.js",
-    "ui:watch": "npm run ui:css & npm run ui:html & npm run ui:react & npm run ui:js",
-    "watch": "watch 'npm run build:sh' dev & npm run build:coffee & npm run ui:watch",
-    "server": "nodemon ./server.js",
-    "ui:server": "cd ui && browser-sync start --proxy localhost:2000 --files '**/*.html, **/*.css, **/*.js' --reload-delay 500"
+    "ui:js": "watchify dev/ui/js/index.cjsx -o ui/scripts/bundle.js -t coffee-reactify -dv",
+    "ui:css": "sass -w dev/ui/css/index.sass:ui/css/index.css",
+    "server": "nodemon -w 'server' server/index.js",
+    "server:build": "cjsx -wo server dev/server",
+    "watch": "npm run server:build & npm run ui:js & npm run ui:css",
+    "dev": "browser-sync start --proxy='localhost:2000' --files 'ui/**/*.css, ui/**/*.js, dev/ui/jade/**/*.*'"
   },
   "repository": {
     "type": "git",
@@ -47,20 +43,17 @@
   },
   "homepage": "https://github.com/findthebrink/brink-daytimer#readme",
   "dependencies": {
-    "async": "^1.4.2",
-    "backbone": "^1.2.3",
-    "brink-sass": "^0.2.3",
-    "coffeeify": "^1.1.0",
-    "commander": "^2.8.1",
+    "body-parser": "^1.14.1",
+    "brink-sass": "^0.2.2",
+    "cookie-parser": "^1.4.0",
     "express": "^4.13.3",
-    "firebase": "^2.2.9",
-    "inquirer": "^0.10.0",
+    "express-session": "^1.12.1",
+    "jade": "^1.11.0",
     "jquery": "^2.1.4",
-    "moment": "^2.10.6",
-    "react": "^0.13.3",
-    "react-router": "^1.0.0-beta3",
-    "reactfire": "^0.5.0",
-    "underscore": "^1.8.3"
+    "mongoose": "^4.2.5",
+    "morgan": "^1.6.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "coffee-reactify": "^4.0.0"

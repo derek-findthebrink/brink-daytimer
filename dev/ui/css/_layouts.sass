@@ -24,7 +24,7 @@ header
 			font-size: 250%
 
 
-#questions, #trackers
+.questions, .trackers
 	@include outer-container(100%)
 	li 
 		@include row(table)
@@ -61,3 +61,12 @@ header
 
 .icon-toggle
 	width: 4em
+
+form
+	@include fill-parent
+	& > div
+		@include row(table)
+		margin-top: 0.2em
+	label, input, textarea
+		vertical-align: top
+		padding-top: 0

@@ -1,0 +1,43 @@
+doctype html
+head
+	link(rel="stylesheet" href="/assets/slicknav.css")
+	link(rel="stylesheet" href="/css/index.css")
+	link(rel="stylesheet" href="/scripts/jquery-ui/themes/base/jquery-ui.min.css")
+	title daytimer
+body
+	header
+		a(href="/")
+			.logo
+				img(src="assets/brink-logo-small.svg")
+			.title
+				h1 daytimer
+	.slicknav
+	nav
+		ul
+			li 
+				a(href="/dashboard") dashboard
+			li
+				a(href="/stats") stats
+			li
+				a(href="/trackers") trackers
+			li
+				a(href="/settings") settings
+
+	main
+		.content
+
+		.menu
+
+	footer
+
+	script(src="/scripts/react/react.min.js")
+	script(src="/scripts/jquery/dist/jquery.min.js")
+	script(src="/scripts/underscore/underscore-min.js")
+	script(src="/scripts/backbone/backbone-min.js")
+	script(src="/scripts/jquery-ui/jquery-ui.min.js")
+	script(src="/scripts/slicknav/dist/jquery.slicknav.min.js")
+	script(src="/scripts/bundle.js")
+	//- script(src="./scripts/react/index.js")
+	//- typekit
+	<script src="https://use.typekit.net/rsz1its.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>

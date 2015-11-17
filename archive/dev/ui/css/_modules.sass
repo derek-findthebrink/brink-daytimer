@@ -1,0 +1,31 @@
+ul 
+	list-style-type: none
+
+// backgrounds
+html
+	background-image: url("/assets/a-nice-green-mapple-leaf.jpg")
+	background-size: cover
+
+.questions-list
+	.complete
+		background-color: $item-complete-bcg
+	.pending
+		background-color: $item-pending-bcg
+	.incomplete
+		background-color: $item-incomplete-bcg
+
+
+.slicknav_btn
+	background-color: $blue
+	border: 2px solid mix($blue, black)
+.slicknav_menu
+	margin-top: -2.7em
+	padding: 0
+	background: none
+	.slicknav_nav
+		text-align: center
+		font-size: 110%
+		background-color: $header-bcg
+		a
+			&:hover
+				background-color: rgba(mix($header-bcg, white), 0.4)
