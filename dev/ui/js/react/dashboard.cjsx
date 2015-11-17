@@ -4,7 +4,7 @@ tag = "react/dashboard:%s =>"
 
 # Requires
 # ---------------------------------------
-
+weather = require "weather"
 
 # Logic
 # ---------------------------------------
@@ -12,6 +12,10 @@ tag = "react/dashboard:%s =>"
 d = {}
 
 Dashboard = React.createClass({
+	componentDidMount: ->
+		w = weather({location: "Vancouver, BC"}, (data)->
+			console.log(data)
+			)
 	render: ->
 		<div>
 			<h2>Dashboard!</h2>
