@@ -22,14 +22,15 @@ Trackers = React.createClass({
 			trackers: []
 		}
 	componentDidMount: ->
-		target = app.c.trackers
-		setState = =>
+		target = app
+		setState = (e)=>
 			this.setState({
-				trackers: target.toJSON()
+				trackers: e
 				})
-		setState()
-		target.on("sync", =>
-			setState()
+		setState(app.c.trackers.toJSON())
+		target.on("trackers", (e)=>
+			setState(e)
+			console.log(tag, "json trackers on set state", e)
 			)
 	render: ->
 		trackers = this.state.trackers
@@ -39,8 +40,8 @@ Trackers = React.createClass({
 			<TrackerAdd fields={fields} />
 			<ul className="tracker-list">
 				{
-					trackers.map((x)->
-						<TrackerItem tracker={x} />
+					trackers.map((x, i)->
+						<TrackerItem key={i} tracker={x} />
 						)
 				}
 			</ul>
@@ -50,17 +51,23 @@ Trackers = React.createClass({
 TrackerItem = React.createClass({
 	render: ->
 		tracker = this.props.tracker
-		<li>
-			<p>{tracker.category}</p>
-			<h2>{tracker.question}</h2>
-			<p>{tracker.frequency} / day</p>
-			<p>{moment(tracker.dateLastAnswered).format("YYYY-MM-DD")}</p>
+		<li className="tracker-item">
+			<div className="edit">
+				<img src="/assets/caret-complete.png" />
+			</div>
+			<div className="details">
+				<p>{tracker.category}</p>
+				<h2>{tracker.question}</h2>
+				<p>{tracker.frequency} / day</p>
+				<p>{moment(tracker.dateLastAnswered).format("YYYY-MM-DD")}</p>
+			</div>
+			<app.v.Menu.Main type="tracker" target={tracker} />
 		</li>
 	})
 
 TrackerAdd = React.createClass({
 	componentDidMount: ->
-		$this = $(this.getDOMNode())
+		$this = $(ReactDOM.findDOMNode(this))
 		$this.accordion({
 			collapsible: true
 			heightStyle: "content"
@@ -83,9 +90,9 @@ TrackerAdd = React.createClass({
 			<h3>Tracker Add</h3>
 			<form>
 				{
-					fields.map((x)->
+					fields.map((x, i)->
 						# console.log(tag, "field", x)
-						FieldBuilder(x)
+						FieldBuilder(x, i)
 						)
 				}
 			</form>

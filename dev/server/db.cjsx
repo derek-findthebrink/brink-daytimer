@@ -9,6 +9,8 @@ models = require "./models"
 
 Question = mongoose.model("Question")
 Daytimer = mongoose.model("Daytimer")
+Type = mongoose.model("Type")
+Category = mongoose.model("Category")
 
 # Logic
 # ---------------------------------------
@@ -79,6 +81,16 @@ d = (app)=>
 	app.post("/data/daytimers", h.add(Daytimer))
 	app.put("/data/daytimers/:id", h.update(Daytimer))
 	app.delete("/data/daytimers/:id", h.delete(Daytimer))
+
+	app.get("/data/categories", h.get(Category))
+	app.post("/data/categories", h.add(Category))
+	app.put("/data/categories/:id", h.update(Category))
+	app.delete("/data/categories/:id", h.delete(Category))
+
+	app.get("/data/types", h.get(Type))
+	app.post("/data/types", h.add(Type))
+	app.put("/data/types/:id", h.update(Type))
+	app.delete("/data/types/:id", h.delete(Type))
 
 
 

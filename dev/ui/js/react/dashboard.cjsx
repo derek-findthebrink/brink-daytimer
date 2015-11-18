@@ -13,9 +13,6 @@ d = {}
 
 Dashboard = React.createClass({
 	componentDidMount: ->
-		w = weather({location: "Vancouver, BC"}, (data)->
-			console.log(data)
-			)
 	render: ->
 		<div>
 			<h2>Dashboard!</h2>

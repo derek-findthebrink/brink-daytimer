@@ -5,9 +5,11 @@ tag = "brink-dev/model-sync:%s =>"
 # Requires
 # ---------------------------------------
 models = require("./models.cjsx")
+_ = require("underscore")
 reactForm = require("./form-react.cjsx")
 modelBackbone = require("./model-backbone.cjsx")
 modelMongoose = require("./model-mongoose.cjsx")
+refgen = require("./model-refgen.cjsx")
 
 
 # Logic
@@ -27,5 +29,11 @@ m.ReactFieldBuilder = reactForm.fieldBuilder
 m.makeBackboneDefaults = (name)->
 	c = m.get(name)
 	modelBackbone.make(c)
+
+m.makeMongooseSchema = (name)->
+	c = m.get(name)
+	modelMongoose.make(c)
+
+m.refgen = refgen.gen
 
 exports = module.exports = m

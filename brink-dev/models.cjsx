@@ -110,6 +110,10 @@ json = [
 					value: "Submit"
 					typeForm: "submit"
 				}
+				{
+					name: "ref"
+					typeDb: String
+				}
 			]
 		}
 		{
@@ -136,6 +140,58 @@ json = [
 					default: ->
 						return new Date()
 					typeDb: Date
+				}
+				{
+					name: "ref"
+					typeDb: String
+				}
+			]
+		}
+		{
+			name: "types"
+			fields: [
+				{
+					name: "title"
+					default: ""
+					typeDb: String
+					typeForm: "text"
+				}
+				{
+					name: "description"
+					default: ""
+					typeDb: String
+					typeForm: "textarea"
+				}
+				{
+					name: "ref"
+					typeDb: String
+				}
+				{
+					name: "submit"
+					value: "Submit"
+					typeForm: "submit"
+				}
+			]
+		}
+		{
+			name: "categories"
+			fields: [
+				{
+					name: "title"
+					default: ""
+					typeDb: String
+					typeForm: "text"
+				}
+				{
+					name: "description"
+					default: ""
+					typeDb: String
+					typeForm: "textarea"
+				}
+				{
+					name: "submit"
+					typeForm: "submit"
+					value: "Submit"
 				}
 			]
 		}

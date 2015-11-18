@@ -10,32 +10,33 @@ tag = "brink-dev/form-react:%s =>"
 # ---------------------------------------
 
 
-fieldBuilder = (field)->
+fieldBuilder = (field, index)->
 	if !field.typeForm
 		return
 	else if field.typeForm == "submit"
-		<div>
+		<div key={index}>
 			<label className="label-placeholder">&nbsp;</label>
 			<input type="submit" value={field.value} />
 		</div>
 	else if field.typeForm == "select"
-		<div>
+		<div key={index}>
 			<label htmlFor={field.name}>{field.name}</label>
 			<select name={field.name}>
 				{
+					i = 0
 					field.list.map((x)->
-						<option value={x.value}>{x.name}</option>
+						<option key={i++} value={x.value}>{x.name}</option>
 						)
 				}
 			</select>
 		</div>
 	else if field.typeForm == "textarea"
-		<div>
+		<div key={index}>
 			<label htmlFor={field.name}>{field.name}</label>
 			<textarea name={field.name} />
 		</div>
 	else
-		<div>
+		<div key={index}>
 			<label htmlFor={field.name}>{field.name}</label>
 			<input type={field.typeForm} name={field.name} />
 		</div>

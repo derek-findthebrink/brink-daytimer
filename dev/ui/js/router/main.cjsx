@@ -34,25 +34,25 @@ main = Backbone.Router.extend({
 			)
 	trackers: ->
 		# console.log(tag, "trackers", "init!")
-		React.render(
+		ReactDOM.render(
 			<app.v.Trackers.Main />
 			$(".content")[0]
 			)
 	dashboard: ->
-		console.log(tag,"dashboard", "init")
-		React.render(
+		# console.log(tag,"dashboard", "init")
+		ReactDOM.render(
 			<app.v.Dashboard.Main />
 			$(".content")[0]
 			)
 	stats: ->
-		console.log(tag, "stats", "init")
-		React.render(
+		# console.log(tag, "stats", "init")
+		ReactDOM.render(
 			<app.v.Stats.Main />
 			$(".content")[0]
 			)
 	settings: ->
-		console.log(tag, "settings", "init")
-		React.render(
+		# console.log(tag, "settings", "init")
+		ReactDOM.render(
 			<app.v.Settings.Main />
 			$(".content")[0]
 			)

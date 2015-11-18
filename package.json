@@ -10,7 +10,7 @@
     "server": "nodemon -w 'server' server/index.js",
     "server:build": "cjsx -wo server dev/server",
     "watch": "npm run server:build & npm run ui:js & npm run ui:css",
-    "dev": "browser-sync start --proxy='localhost:2000' --files 'ui/**/*.css, ui/**/*.js, dev/ui/jade/**/*.*'"
+    "dev": "browser-sync start --proxy='localhost:2000' --reload-delay 500 --files 'ui/**/*.css, ui/**/*.js, dev/ui/jade/**/*.*'"
   },
   "repository": {
     "type": "git",
@@ -52,8 +52,10 @@
     "jquery": "^2.1.4",
     "mongoose": "^4.2.5",
     "morgan": "^1.6.1",
+    "node-cjsx": "^1.0.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
+    "underscore": "^1.8.3",
     "weather": "^0.1.0"
   },
   "devDependencies": {
